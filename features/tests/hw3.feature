@@ -1,6 +1,7 @@
-# Created by atefehkalantarnia at 2025-09-07
-Feature: # Enter feature name here
-  # Enter feature description here
+Feature:Test Scenarios for Stackoverflow Singup
 
-  Scenario: # Enter scenario name here
-    # Enter steps here
+  Scenario: Successful signup with email and password
+    Given Open stackoverflow page
+    When the user enters email and password
+    And  Click on Sign Up button
+    Then the user should be registered successfully
