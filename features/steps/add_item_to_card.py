@@ -18,7 +18,9 @@ def add_item_to_cart(context):
 
 @then('Click on cart icon')
 def click_cart_icon(context):
-    context.driver.find_element(*ADD_CARD2).click()
+    #context.driver.find_element(*ADD_CARD2).click()
+    context.app.header.card_item(context)
+
     sleep(5)
 
 

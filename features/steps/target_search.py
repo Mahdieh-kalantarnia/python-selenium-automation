@@ -10,14 +10,16 @@ SEARCH_RESULTS_TXT = (By.XPATH, "//div[@data-test='lp-resultsCount']")
 
 @when('Search for {search_word}')
 def search(context, search_word):
-    context.driver.find_element(*SEARCH_BOX).send_keys(search_word)
-    context.driver.find_element(*SEARCH_BTN).click()
+    #context.driver.find_element(*SEARCH_BOX).send_keys(search_word)
+    #context.driver.find_element(*SEARCH_BTN).click()
+    context.app.header.search_product(search_word)
     sleep(7)
 
 @then('I should see results to that {product}')
 def verify_results(context, product):
-    actual_text = context.driver.find_element(*SEARCH_RESULTS_TXT).text
-    assert product in actual_text, f'Error.{product} Not Found! {product} Actual_text: {actual_text}'
+   # actual_text = context.driver.find_element(*SEARCH_RESULTS_TXT).text
+   # assert product in actual_text, f'Error.{product} Not Found! {product} Actual_text: {actual_text}'
+    context.app.search_results_page.verify_search_results(product)
     sleep(5)
 
 
