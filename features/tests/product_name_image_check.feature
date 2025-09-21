@@ -5,6 +5,6 @@ Scenario Outline:Check name and an image
     When  Search for <product>
     Then Every product on the search results page should have
        Examples:
-     |product        |expected_product |
-     |blouse           |blouse        |
+     |product        |       |
+     |blouse         |       |
 
